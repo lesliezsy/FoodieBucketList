@@ -30,8 +30,6 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword;
 
-  // 當搜尋為空字串時候端會有錯誤(Cannot set headers after they are sent to the client)，其主要原因為已經response資料但程式還在執行相關操作。
-
   // 如果沒輸入關鍵字，就重導回首頁
   if (keyword === '') {
     return res.redirect('/');
