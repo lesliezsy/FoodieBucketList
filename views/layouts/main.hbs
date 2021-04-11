@@ -2,39 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FoodBucket! 我的餐廳清單</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FoodBucket! 我的餐廳清單</title>
 
- {{!-- 為方便其他pages也能使用此css檔，所以在layouts中載入 --}}
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+  {{!-- 為方便其他pages也能使用此css檔，所以在layouts中載入 --}}
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Jaldi&&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <!-- navigation -->
-   <header>
   <!-- navigation -->
-  <nav class="navbar navbar-light primary-bg justify-content-between">
+  <header>
+    <!-- navigation -->
+    <nav class="navbar navbar-light primary-bg justify-content-between">
       <a class="navbar-brand" href="/">
-          {{!-- <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單"> --}}
-          FoodBucket!
-        </a>
-        <a class="btn btn-sm btn-minor" href="./restaurants/new">Add</a>
-  </nav>
+        FoodBucket!
+      </a>
+      <a class="btn btn-sm btn-minor" href="./restaurants/new">Add</a>
+    </nav>
+  </header>
 
-  {{!-- <div class="banner"></div> --}}
-</header>
+  <!-- partial templates will replace the part of "body" here -->
+  {{{ body }}}
 
-    <!-- partial templates will replace the part of "body" here -->
-    {{{ body }}}
-
-    <script src="/javascripts/jquery-3.3.1.js"></script>
-    <script src="/javascripts/popper.js"></script>
-    <script src="/javascripts/bootstrap.js"></script>
+  <script src="/javascripts/jquery-3.3.1.js"></script>
+  <script src="/javascripts/popper.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
 </body>
 
 </html>

@@ -24,12 +24,13 @@ router.get('/:id', (req, res) => {
 // Create: Add a new restaurant
 // 設定接住 new頁面POST來的表單資料，並且把資料送往資料庫（跟restaurants頁面？！）
 router.post('/', (req, res) => {
+    console.log(req.body.image);
+    if (!!req.body.image === false) { req.body.image = 'https://picsum.photos/400/280'}
     const restaurant = req.body // 從 req.body 拿出表單裡的資料
     return Restaurant.create(restaurant) // 存入資料庫
         .then(() => res.redirect('/')) // 新增完成後導回首頁
         .catch(error => console.log(error))
 })
-
 
 // Update: Edit a restaurant's info
 router.get('/:id/edit', (req, res) => {
@@ -51,7 +52,7 @@ router.put('/:id', (req, res) => {
         .catch(error => console.log(error))
 })
 
-// Delete
+// Delete: Remove a restaurant's info
 router.delete('/:id', (req, res) => {
     const id = req.params.id // 透過 req.params.id 取得網址上特定一筆資料的識別碼，用來查詢使用者想刪除的 To-do
     return Restaurant.findById(id) // 查詢資料，資料庫查詢成功以後，會把資料放進 todo 

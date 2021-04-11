@@ -1,9 +1,14 @@
+body {
+  font-family: 'Jaldi', sans-serif;
+}
 header {
     overflow: hidden;
   }
   
   .navbar .navbar-brand {
+    font-family: 'Comfortaa', cursive;
     color: #dddddd;
+    font-size: 1rem;
   }
   
   .navbar .navbar-brand:hover {
@@ -17,6 +22,14 @@ header {
   .sec-bg {
     background-color: #a40e4c;
     color: #fafafa;
+  }
+
+  .primary-color {
+    color: #2c2c54;
+  }
+
+  .primary-color:hover {
+    color: #acc3a6;
   }
 
   .form-control::placeholder {
@@ -42,6 +55,14 @@ header {
   .btn-minor:hover {
     background-color: #ac235c;
     color: #FAFAFA;
+  }
+
+  .text-major {
+    color: #333;
+  }
+
+  .text-major:hover {
+    color: #ac235c;
   }
   
   .form-control:focus {
@@ -73,6 +94,8 @@ header {
     text-align: center;
     font-size: 1.3rem;
   }
+
+  
   
   @media screen and (max-width: 992px) {
     
