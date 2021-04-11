@@ -42,7 +42,12 @@
       </div>
 
       <div class="col my-3 d-flex flex-row-reverse">
-        <a class="btn btn-minor pr-3" href="./{{restaurant._id}}/edit">Edit</a>
+        <a class="btn btn-minor ml-3" href="./{{restaurant._id}}/edit">Edit</a>
+        <form action="./{{restaurant._id}}?_method=DELETE" method="POST">
+          <button type="submit" class="btn btn-major">
+            Delete
+          </button>
+        </form>
       </div>
 
     </div>
