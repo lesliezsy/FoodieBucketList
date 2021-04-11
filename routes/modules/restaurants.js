@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.body.image);
     if (!!req.body.image === false) {
-        req.body.image = 'https://picsum.photos/400/280'
+        req.body.image = '/images/imgHolder.jpeg'
     }
     const restaurant = req.body // 從 req.body 拿出表單裡的資料
     return Restaurant.create(restaurant) // 存入資料庫
