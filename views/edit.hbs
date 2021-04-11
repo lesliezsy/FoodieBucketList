@@ -1,13 +1,87 @@
-<form action="/todos/{{ todo._id }}?_method=PUT" method="POST" style="display: inline;">
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <div class="input-group-text">
-        <input type="checkbox" name="isDone" {{#if todo.isDone }} checked {{/if}}>
-      </div>
-    </div>
-    <input class="form-control" type="text" placeholder="name" name="name" value="{{ todo.name }}">
-    <div class="input-group-append">
-      <button class="btn" type="submit" style="background-color: #627E90; color: #FAFAFA">Save</button>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12 mx-auto">
+      <h5>Edit</h5>
+      <form class="row g-3 needs-validation" novalidate action="/restaurants/{{ restaurant._id }}?_method=PUT" method="POST">
+        <div class="col-10">
+          <label for="name">Chinese Name</label>
+          <input type="text" id="name" name="name" class="form-control" value="{{ restaurant.name }}" required>
+          <div class="invalid-feedback">
+            必填
+          </div>
+        </div>
+        <div class="col-10">
+          <label for="name_en" class="form-label">English Name</label>
+          <input type="text" id="name_en" name="name_en" class="form-control" value="{{ restaurant.name_en }}">
+        </div>
+        <div class="col-10">
+          <label for="category" class="form-label">Category</label>
+          <input type="text" id="category" name="category" class="form-control" value="{{ restaurant.category }}" required>
+           <div class="invalid-feedback">
+            必填
+          </div>
+        </div>
+        <div class="col-10">
+          <label for="image" class="form-label">Cover Photo</label>
+          <input type="text" id="image" name="image" class="form-control" value="{{ restaurant.image }}">
+        </div>
+        <div class="col-10 col-md-6">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="text" id="phone" name="phone" class="form-control" value="{{ restaurant.phone }}" required>
+           <div class="invalid-feedback">
+            必填
+          </div>
+        </div>
+        <div class="col-6 col-md-4">
+          <label for="rating" class="form-label">Rating</label>
+          <input type="text" id="rating" name="rating" class="form-control" value="{{ restaurant.rating }}" required>
+           <div class="invalid-feedback">
+            必填
+          </div>
+        </div>
+        <div class="col-10">
+          <label for="google_map" class="form-label">Google Map</label>
+          <input type="text" id="google_map" name="google_map" class="form-control" value="{{ restaurant.google_map }}">
+        </div>
+
+        <div class="col-10">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" aria-label="Description" id="description" name="description"
+            required>{{ restaurant.description }}</textarea>
+             <div class="invalid-feedback">
+            必填
+          </div>
+        </div>
+
+        <div class="col-10 my-3 d-flex flex-row-reverse">
+          <button type="submit" class="btn btn-minor">Update</button>
+        </div>
+
+      </form>
+
     </div>
   </div>
-</form>
+</div>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
