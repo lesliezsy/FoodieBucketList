@@ -3,11 +3,11 @@ header {
   }
   
   .navbar .navbar-brand {
-    color: #4592af;
+    color: #dddddd;
   }
   
   .navbar .navbar-brand:hover {
-    color: #226089;
+    color: #998377;
   }
   
   .banner {
@@ -23,7 +23,7 @@ header {
   .search-bar .search-bar-outer {
     margin: 0 auto;
     max-width: 680px;
-    background-color: #fce2cf;
+    background-color: #998377;
     border-radius: 8px;
     padding: 20px 30px;
     border: 0;
@@ -32,7 +32,7 @@ header {
   }
   
   .search-bar .search-bar-inner h4 {
-    color: #9b4b4b;
+    color: #f8f9fa;
   }
   
   .form-control::placeholder {
@@ -41,7 +41,7 @@ header {
   }
   
   .btn-major {
-    background-color: #9b4b4b;
+    background-color: #DC9387;
     color: white;
   }
   
