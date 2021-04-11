@@ -30,16 +30,15 @@ router.get('/search', async (req, res) => {
     try {
         const allRestaurants = await Restaurant.find().lean()
         // 可使用餐廳的中文名或英文名搜尋
-        const restaurants = await allRestaurants.filter(restaurant => restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.name_en.toLowerCase().includes(keyword.trim().toLowerCase())
-        )
-        
+        const restaurants = await allRestaurants.filter(restaurant => restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.name_en.toLowerCase().includes(keyword.trim().toLowerCase()))
+
         // 如果找不到任何餐廳，就回傳無符合的查詢結果
         if (restaurants.length === 0) {
             const noResult = '無符合的查詢結果'
             return res.render('index', {
-              noResult
+                noResult
             })
-          }
+        }
 
         return res.render('index', {
             restaurants,

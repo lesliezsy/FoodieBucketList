@@ -1,6 +1,8 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
-const { urlencoded } = require("body-parser")
+const {
+  urlencoded
+} = require("body-parser")
 const methodOverride = require('method-override')
 const routes = require('./routes')
 
@@ -15,7 +17,9 @@ app.engine('hbs', exphbs({
 }))
 
 app.set('view engine', 'hbs')
-app.use(urlencoded({ extended: true }))
+app.use(urlencoded({
+  extended: true
+}))
 app.use(methodOverride('_method'))
 app.use(routes)
 
