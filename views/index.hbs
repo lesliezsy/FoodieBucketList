@@ -1,24 +1,19 @@
 <div class="container mt-5">
 
     <!-- search bar -->
-    <div class="container search-bar">
-        <div class="search-bar-outer">
-            <div class="search-bar-inner">
                 <form action="/search">
-                    <h4 class="mb-2">尋找餐廳：</h4>
                     <div class="input-group">
                         {{!-- input的value為空時，不能搜尋 --}}
-                        <input type="text" id="form" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
-                            aria-label="Restaurant Name" value="" aria-describedby="search-button">
+                        <input type="text" id="form" name="keyword" value="{{keyword}}" class="form-control"
+                            placeholder="Search" aria-label="Restaurant Name" value=""
+                            aria-describedby="search-button">
                         <div class="input-group-append">
                             <button class="btn btn-major" type="submit" id="search-button" onclick="checkEmpty()"><i
                                     class="fas fa-search"></i></button>
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
+           
 
     <!-- restaurant list -->
     <div class="container mt-5">
@@ -26,10 +21,10 @@
             <div class="col-md-10 col-12 mx-auto">
 
                 <div> {{ noResult }}</div>
-             
+
                 <div class="card-columns">
                     {{#each restaurants}}
-                    <a href="/restaurants/{{this.id}}" class="text-secondary">
+                    <a href="./restaurants/{{this._id}}" class="text-secondary">
                         <div class="card mb-3">
                             <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
                             <div class="card-body p-3">
@@ -47,8 +42,21 @@
                             </div>
                         </div>
                     </a>
+                    <div class="d-grid gap-2 d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        Edit
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        Detail
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        Delete
+                    </button>
+                    </div>
                     {{/each}}
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -56,12 +64,12 @@
 </div>
 
 <script>
-function checkEmpty(){  
-    console.log(document.getElementById("form").value)
-    if (document.getElementById("form").value === '') {
-        alert('請輸入餐廳名後再進行搜尋！'); 
-        return false;
+    function checkEmpty() {
+        console.log(document.getElementById("form").value)
+        if (document.getElementById("form").value === '') {
+            alert('請輸入餐廳名後再進行搜尋！');
+            return false;
+        }
+
     }
-   
-}
 </script>

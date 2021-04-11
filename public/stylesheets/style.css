@@ -7,47 +7,41 @@ header {
   }
   
   .navbar .navbar-brand:hover {
-    color: #998377;
+    color: #afafaf;
   }
   
-  .banner {
-    position: relative;
-    z-index: -1;
-    margin: -5px;
-    height: 360px;
-    background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
-    background-size: cover;
-    filter: blur(3px);
+  .primary-bg {
+    background-color: #2c2c54;
   }
-  
-  .search-bar .search-bar-outer {
-    margin: 0 auto;
-    max-width: 680px;
-    background-color: #998377;
-    border-radius: 8px;
-    padding: 20px 30px;
-    border: 0;
-    margin-top: -60px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-bar .search-bar-inner h4 {
-    color: #f8f9fa;
-  }
-  
+
   .form-control::placeholder {
     color: #aaaaaa;
     font-size: 0.8rem;
   }
   
   .btn-major {
-    background-color: #DC9387;
-    color: white;
+    background-color: #2c2c54;
+    color: #FAFAFA;
+  }
+
+  .btn-major:hover {
+    background-color: #39396b;
+    color: #FAFAFA;
+  }
+
+  .btn-minor {
+    background-color: #a40e4c;
+    color: #FAFAFA;
+  }
+  
+  .btn-minor:hover {
+    background-color: #ac235c;
+    color: #FAFAFA;
   }
   
   .form-control:focus {
     box-shadow: none;
-    border-color: #ced4da;
+    border-color: #2c2c54;
   }
   
   .card {
@@ -70,12 +64,9 @@ header {
   }
   
   .restaurant-show-title {
-    position: relative;
-    top: -180px;
-    color: white;
+    color: #333;
     text-align: center;
-    font-size: 3rem;
-    text-shadow: rgba(0, 0, 0, 0.664) 1px 0 10px, 0 0 0.2em rgb(16, 32, 54);;
+    font-size: 1.3rem;
   }
   
   @media screen and (max-width: 992px) {
@@ -88,7 +79,7 @@ header {
   @media screen and (max-width: 768px) {
     
     .restaurant-show-title {
-      font-size: 2rem;
+      font-size: 1.1rem;
     }
   }
   

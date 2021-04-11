@@ -1,8 +1,9 @@
-<h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
-<h3 class="mb-1 restaurant-show-title">{{restaurant.name_en}}</h3>
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
+
+      <h5 class="mt-4 mb-2 restaurant-show-title">{{restaurant.name}}</h5>
+      <h6 class="mb-3 restaurant-show-title">{{restaurant.name_en}}</h6>
 
       <p class="mb-1">
         <span class="text-secondary">
@@ -32,10 +33,11 @@
       </p>
 
       <p class="my-5">
-          {{restaurant.description}}
+        {{restaurant.description}}
       </p>
 
-       <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}" style="max-width: 600px;">
+      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
+        style="max-width: 600px;">
     </div>
   </div>
 </div>
