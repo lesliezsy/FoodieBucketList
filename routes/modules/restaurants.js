@@ -3,12 +3,24 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
+
+// View all restaurants：write in index.js 
+  
 // 讓 view 引擎去拿 new 樣板
 router.get('/new', (req, res) => {
     return res.render('new')
 })
 
-// View all restaurants：write in index.js   
+
+// Create: Add a new restaurant
+// 設定接住 new頁面POST來的表單資料，並且把資料送往資料庫（跟restaurants頁面？！）
+router.post('/', (req, res) => {
+    console.log("img", req.body.image);
+    const restaurant = req.body // 從 req.body 拿出表單裡的資料
+    return Restaurant.create(restaurant) // 存入資料庫
+        .then(() => res.redirect('/')) // 新增完成後導回首頁
+        .catch(error => console.log(error))
+})
 
 // Read: View a restaurant's info
 router.get('/:id', (req, res) => {
@@ -16,7 +28,7 @@ router.get('/:id', (req, res) => {
     return Restaurant.findById(id)
         .lean()
         .then((restaurant) => {
-            console.log(restaurant);
+            // console.log(restaurant);
             res.render('show', {
                 restaurant
             })
@@ -24,18 +36,6 @@ router.get('/:id', (req, res) => {
         .catch(error => console.log(error))
 })
 
-// Create: Add a new restaurant
-// 設定接住 new頁面POST來的表單資料，並且把資料送往資料庫（跟restaurants頁面？！）
-router.post('/', (req, res) => {
-    console.log(req.body.image);
-    if (!!req.body.image === false) {
-        req.body.image = '/images/imgHolder.jpeg'
-    }
-    const restaurant = req.body // 從 req.body 拿出表單裡的資料
-    return Restaurant.create(restaurant) // 存入資料庫
-        .then(() => res.redirect('/')) // 新增完成後導回首頁
-        .catch(error => console.log(error))
-})
 
 // Update: Edit a restaurant's info
 router.get('/:id/edit', (req, res) => {

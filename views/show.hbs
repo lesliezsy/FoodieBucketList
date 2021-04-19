@@ -37,17 +37,18 @@
       </p>
 
       <div class="col">
-        <img class="rounded mx-auto d-block mb-2 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
+        <img class="rounded mx-auto d-block mb-2 w-100" src="{{#if restaurant.image}}{{restaurant.image}}{{else}}/images/imgHolder.jpeg{{/if}}" alt="{{restaurant.name}}"
           style="max-width: 600px;">
       </div>
 
       <div class="col my-3 d-flex flex-row-reverse">
         <a class="btn btn-minor ml-3" href="./{{restaurant._id}}/edit">Edit</a>
         <form action="./{{restaurant._id}}?_method=DELETE" method="POST">
-          <button type="submit" class="btn btn-major">
+          <button type="submit" class="btn btn-major ml-3">
             Delete
           </button>
         </form>
+        <button type="button" class="btn btn-third " onclick="javascript:history.back()">Back</button>
       </div>
 
     </div>

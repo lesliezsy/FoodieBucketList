@@ -23,11 +23,11 @@
         </div>
         <div class="col-10">
           <label for="image" class="form-label">Cover Photo</label>
-          <input type="text" id="image" name="image" class="form-control" value="{{ restaurant.image }}">
+          <input type="text" id="image" name="image" class="form-control" value="{{restaurant.image}}">
         </div>
         <div class="col-10 col-md-6">
           <label for="phone" class="form-label">Phone Number</label>
-          <input type="text" id="phone" name="phone" class="form-control" value="{{ restaurant.phone }}" required>
+          <input type="text" id="phone" name="phone" class="form-control" value="{{restaurant.phone}}" required>
            <div class="invalid-feedback">
             必填
           </div>
@@ -54,7 +54,8 @@
         </div>
 
         <div class="col-10 my-3 d-flex flex-row-reverse">
-          <button type="submit" class="btn btn-minor">Update</button>
+          <button type="submit" class="btn btn-minor ml-3">Update</button>
+          <button type="button" class="btn btn-third" onclick="javascript:history.back()">Back</button>
         </div>
 
       </form>

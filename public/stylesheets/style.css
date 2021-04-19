@@ -53,7 +53,17 @@ header {
   }
   
   .btn-minor:hover {
-    background-color: #ac235c;
+    background-color: #b1376a;
+    color: #FAFAFA;
+  }
+
+  .btn-third {
+    background-color: #6ca85e;
+    color: #FAFAFA;
+  }
+  
+  .btn-third:hover {
+    background-color: #82b376;
     color: #FAFAFA;
   }
 
@@ -62,7 +72,7 @@ header {
   }
 
   .text-major:hover {
-    color: #ac235c;
+    color: #b1376a;
   }
   
   .form-control:focus {
@@ -96,16 +106,15 @@ header {
   }
 
   
-  
   @media screen and (max-width: 992px) {
     
     .card img{
-      height: 115px;
+      height: 200px;
     }
   }
   
   @media screen and (max-width: 768px) {
-    
+
     .restaurant-show-title {
       font-size: 1.1rem;
     }

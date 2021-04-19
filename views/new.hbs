@@ -4,10 +4,10 @@
       <h5>Add a new restaurant</h5>
       <form class="row g-3 needs-validation" novalidate action="/restaurants" method="POST">
         <div class="col-10">
-          <label for="name">Chinese Name</label>
+          <label for="name">Chinese Name *</label>
           <input type="text" id="name" name="name" class="form-control" required>
           <div class="invalid-feedback">
-            必填
+            Required
           </div>
         </div>
         <div class="col-10">
@@ -15,10 +15,10 @@
           <input type="text" id="name_en" name="name_en" class="form-control">
         </div>
         <div class="col-10">
-          <label for="category" class="form-label">Category</label>
+          <label for="category" class="form-label">Category *</label>
           <input type="text" id="category" name="category" class="form-control" required>
           <div class="invalid-feedback">
-            必填
+            Required
           </div>
         </div>
         <div class="col-10">
@@ -26,17 +26,17 @@
           <input type="text" id="image" name="image" class="form-control">
         </div>
         <div class="col-10 col-md-6">
-          <label for="phone" class="form-label">Phone Number</label>
+          <label for="phone" class="form-label">Phone Number *</label>
           <input type="text" id="phone" name="phone" class="form-control" required>
           <div class="invalid-feedback">
-            必填
+            Required
           </div>
         </div>
         <div class="col-6 col-md-4">
-          <label for="rating" class="form-label">Rating</label>
+          <label for="rating" class="form-label">Rating *</label>
           <input type="text" id="rating" name="rating" class="form-control" required>
           <div class="invalid-feedback">
-            必填
+            Required
           </div>
         </div>
         <div class="col-10">
@@ -45,16 +45,17 @@
         </div>
 
         <div class="col-10">
-          <label for="description" class="form-label">Description</label>
+          <label for="description" class="form-label">Description *</label>
           <textarea class="form-control" aria-label="Description" id="description" name="description"
             required></textarea>
           <div class="invalid-feedback">
-            必填
+            Required
           </div>
         </div>
 
         <div class="col-10 my-3 d-flex flex-row-reverse">
-          <button type="submit" class="btn btn-minor">Create</button>
+          <button type="submit" class="btn btn-minor ml-3">Create</button>
+          <button type="button" class="btn btn-third" onclick="javascript:history.back()">Back</button>
         </div>
 
       </form>
