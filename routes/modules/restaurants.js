@@ -3,14 +3,12 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
-
 // View all restaurants：write in index.js 
-  
+
 // 讓 view 引擎去拿 new 樣板
 router.get('/new', (req, res) => {
     return res.render('new')
 })
-
 
 // Create: Add a new restaurant
 // 設定接住 new頁面POST來的表單資料，並且把資料送往資料庫（跟restaurants頁面？！）
@@ -66,6 +64,22 @@ router.delete('/:id', (req, res) => {
         .then(restaurant => restaurant.remove()) // 用 restaurant.remove() 刪除這筆資料
         .then(() => res.redirect('/')) // 使用 redirect 重新呼叫首頁，此時會重新發送請求給 GET /，進入到另一條路由
         .catch(error => console.log(error))
+})
+
+// Sorting
+router.get('/', (req, res) => {
+
+    const sort = req.query
+
+    Restaurant.find()
+        .lean()
+        .sort(sort)
+        .then(restaurants => {
+            res.render('index', {
+                restaurants
+            })
+        })
+        .catch(error => console.error(error))
 })
 
 module.exports = router
