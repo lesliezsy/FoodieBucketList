@@ -32,11 +32,15 @@ router.get('/search', async (req, res) => {
     }
 
     try {
-        // 如果要改用mongoDB find { name: keyword } 改寫，應如何改
-        const allRestaurants = await Restaurant.find().lean()
-        // 可使用餐廳的中文名或英文名搜尋
-        const restaurants = await allRestaurants.filter(restaurant => restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.name_en.toLowerCase().includes(keyword.trim().toLowerCase()))
-
+        // 可使用餐廳的中文名、英文名、類別搜尋
+        const restaurants = await Restaurant.find({
+            $or: [
+              { name: eval("/"+keyword+"/i") },
+              { name_en: eval("/"+keyword+"/i") },
+              { category: eval("/"+keyword+"/i") }
+            ]
+          }).lean()
+        // const restaurants = await allRestaurants.filter(restaurant => restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.name_en.toLowerCase().includes(keyword.trim().toLowerCase()))
         // 如果找不到任何餐廳，就回傳無符合的查詢結果
         if (restaurants.length === 0) {
             const noResult = '無符合的查詢結果'
