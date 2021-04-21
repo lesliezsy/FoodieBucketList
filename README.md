@@ -9,6 +9,7 @@ FoodieBucketList is a website built with Node.js &amp; Express.
 * Search good restaurants
 * Read the introductions, reviews, and other details
 * Manage your fav restaurants: post, update or remove
+* Rearrange restaurant cards by their name, category or rating
 
 ### As a developer, you can
 * Get the source code
