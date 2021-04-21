@@ -13,7 +13,7 @@ router.get('/new', (req, res) => {
 // Create: Add a new restaurant
 // 設定接住 new頁面POST來的表單資料，並且把資料送往資料庫（跟restaurants頁面？！）
 router.post('/', (req, res) => {
-    console.log("img", req.body.image);
+    // console.log("img", req.body.image);
     const restaurant = req.body // 從 req.body 拿出表單裡的資料
     return Restaurant.create(restaurant) // 存入資料庫
         .then(() => res.redirect('/')) // 新增完成後導回首頁
@@ -33,7 +33,6 @@ router.get('/:id', (req, res) => {
         }) // 將查找出的資料傳給 detail 這個樣板
         .catch(error => console.log(error))
 })
-
 
 // Update: Edit a restaurant's info
 router.get('/:id/edit', (req, res) => {
@@ -68,10 +67,8 @@ router.delete('/:id', (req, res) => {
 
 // Sorting
 router.get('/', (req, res) => {
-
     const sort = req.query
-
-    Restaurant.find()
+    return Restaurant.find()
         .lean()
         .sort(sort)
         .then(restaurants => {

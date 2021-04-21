@@ -35,9 +35,9 @@ router.get('/search', async (req, res) => {
         // 可使用餐廳的中文名、英文名、類別搜尋
         const restaurants = await Restaurant.find({
             $or: [
-              { name: eval("/"+keyword+"/i") },
-              { name_en: eval("/"+keyword+"/i") },
-              { category: eval("/"+keyword+"/i") }
+              { name: eval('/'+keyword+'/i') },
+              { name_en: eval('/'+keyword+'/i') },
+              { category: eval('/'+keyword+'/i') }
             ]
           }).lean()
         // const restaurants = await allRestaurants.filter(restaurant => restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.name_en.toLowerCase().includes(keyword.trim().toLowerCase()))
