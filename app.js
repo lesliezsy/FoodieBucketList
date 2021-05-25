@@ -33,6 +33,13 @@ app.use(express.static('public'))
 
 usePassport(app)
 
+app.use((req, res, next) => {
+  // 這裡的req是從 passport (auth.js)來的
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  next()
+})
+
 app.use(routes)
 
 
