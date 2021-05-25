@@ -1,130 +1,143 @@
 body {
   font-family: 'Jaldi', sans-serif;
 }
+
 header {
-    overflow: hidden;
-  }
-  
-  .navbar .navbar-brand {
-    font-family: 'Comfortaa', cursive;
-    color: #dddddd;
-    font-size: 1rem;
-  }
-  
-  .navbar .navbar-brand:hover {
-    color: #afafaf;
-  }
-  
-  .primary-bg {
-    background-color: #2c2c54;
-  }
+  overflow: hidden;
+}
 
-  .sec-bg {
-    background-color: #a40e4c;
-    color: #fafafa;
-  }
+.navbar .navbar-brand {
+  font-family: 'Comfortaa', cursive;
+  color: #dddddd;
+  font-size: 1rem;
+}
 
-  .primary-color {
-    color: #2c2c54;
-  }
+.navbar .navbar-brand:hover {
+  color: #afafaf;
+}
 
-  .primary-color:hover {
-    color: #acc3a6;
-  }
+.primary-bg {
+  background-color: #2c2c54;
+}
 
-  .form-control::placeholder {
-    color: #aaaaaa;
-    font-size: 0.8rem;
-  }
-  
-  .btn-major {
-    background-color: #2c2c54;
-    color: #FAFAFA;
-  }
+.sec-bg {
+  background-color: #a40e4c;
+}
 
-  .btn-major:hover {
-    background-color: #39396b;
-    color: #FAFAFA;
-  }
+.light-font {
+  color: #FAFAFA;
+}
 
-  .btn-minor {
-    background-color: #a40e4c;
-    color: #FAFAFA;
-  }
-  
-  .btn-minor:hover {
-    background-color: #b1376a;
-    color: #FAFAFA;
-  }
+.primary-font {
+  color: #2c2c54;
+}
 
-  .btn-third {
-    background-color: #6ca85e;
-    color: #FAFAFA;
-  }
-  
-  .btn-third:hover {
-    background-color: #82b376;
-    color: #FAFAFA;
-  }
+.primary-font:hover {
+  color: #acc3a6;
+}
+.sec-font {
+  color: #a40e4c;
+}
 
-  .text-major {
-    color: #333;
-  }
+.sec-font:hover {
+  color: #b1376a ;
+}
 
-  .text-major:hover {
-    color: #b1376a;
+
+.text-major {
+  color: #333;
+}
+
+.text-major:hover {
+  color: #b1376a;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #2c2c54;
+}
+
+.form-control::placeholder {
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+.btn-major {
+  background-color: #2c2c54;
+  color: #FAFAFA;
+}
+
+.btn-major:hover {
+  background-color: #39396b;
+  color: #FAFAFA;
+}
+
+.btn-minor {
+  background-color: #a40e4c;
+  color: #FAFAFA;
+}
+
+.btn-minor:hover {
+  background-color: #b1376a;
+  color: #FAFAFA;
+}
+
+.btn-third {
+  background-color: #6ca85e;
+  color: #FAFAFA;
+}
+
+.btn-third:hover {
+  background-color: #82b376;
+  color: #FAFAFA;
+}
+
+
+
+.card {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 180px;
+}
+
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurant-category {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+.restaurant-show-title {
+  color: #333;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+
+@media screen and (max-width: 992px) {
+
+  .card img {
+    height: 200px;
   }
-  
-  .form-control:focus {
-    box-shadow: none;
-    border-color: #2c2c54;
-  }
-  
-  .card {
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card img{
-    height: 180px;
-  }
-  
-  .card-title{
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-  }
-  
-  .restaurant-category {
-    color: #666666;
-    font-size: 0.8rem;
-  }
-  
+}
+
+@media screen and (max-width: 768px) {
+
   .restaurant-show-title {
-    color: #333;
-    text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+
+  .card img {
+    height: auto;
   }
 
-  
-  @media screen and (max-width: 992px) {
-    
-    .card img{
-      height: 200px;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-
-    .restaurant-show-title {
-      font-size: 1.1rem;
-    }
-  }
-  
-  @media screen and (max-width: 575px) {
-    
-    .card img{
-      height: auto;
-    }
-    
-  }
-  
+}

@@ -56,16 +56,16 @@
                             <div class="restaurant-category mb-1">
                                 <i class="fas fa-utensils pr-1"></i> {{this.category}}
                             </div>
-                            <span class="badge badge-pill sec-bg font-weight-normal">
+                            <span class="badge badge-pill sec-bg light-font font-weight-normal">
                                 {{this.rating}}
                                 <i class="fas fa-star fa-xs"></i>
                             </span>
 
                             <div class="d-flex justify-content-end">
-                                <a class="btn btn-sm rounded-circle primary-color"
+                                <a class="btn btn-sm rounded-circle primary-font"
                                     href="./restaurants/{{this._id}}/edit"><i class="fas fa-pen"></i></a>
                                 <form action="./restaurants/{{this._id}}?_method=DELETE" method="POST">
-                                    <button type="submit" class="btn btn-sm rounded-circle primary-color">
+                                    <button type="submit" class="btn btn-sm rounded-circle primary-font">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>
