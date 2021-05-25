@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../../models/user') // 引入User 
-// const passport = require('passport')
+const passport = require('passport')
 // const bcrypt = require('bcryptjs')
 
 router.get('/login', (req, res) => {
@@ -9,11 +9,11 @@ router.get('/login', (req, res) => {
 })
 
 // login時，用 Passport 提供的 authenticate 方法執行認證
-// router.post('/login', passport.authenticate('local', {
-//   successRedirect: '/',
-//   failureRedirect: '/users/login',
-//   failureFlash: true
-// }))
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/users/login',
+  failureFlash: true
+}))
 
 router.get('/register', (req, res) => {
   res.render('register')
