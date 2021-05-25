@@ -2,10 +2,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 // 把想要的資料結構當成參數傳給 new Schema()
 const restaurantSchema = new Schema({
-  // id: {
-  //   type: Number, // 資料型別是字串
-  //   required: true // 這是個必填欄位
-  // },
   name: {
     type: String,
     required: true
@@ -34,6 +30,12 @@ const restaurantSchema = new Schema({
   description: {
     type: String,
     required: true
+  },
+  userId: {  // 加入關聯設定: 去參照 User 的 ObjectId
+    type: Schema.Types.ObjectId, // define此項目為ObjectId，會連向一個資料物件
+    ref: 'User', // 要連結的參考對象是User
+    index: true, // 把 userId 設定成「索引」，方便用它來查資料
+    required: true // 確保每個 restaurant 一定會對應到某個 user
   }
 })
 
