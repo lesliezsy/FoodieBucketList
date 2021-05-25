@@ -29,11 +29,12 @@ app.use(urlencoded({
 }))
 
 app.use(methodOverride('_method'))
+app.use(express.static('public'))
 
 usePassport(app)
 
 app.use(routes)
-app.use(express.static('public'))
+
 
 const PORT = process.env.PORT || 3000
 
