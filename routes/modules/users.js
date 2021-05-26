@@ -40,12 +40,11 @@ router.post('/register', (req, res) => {
   }
   // 檢查使用者是否已經註冊
   User.findOne({ email }).then(user => {
-    console.log("USER: ", user)
     // 如果已經註冊：退回原本畫面
     if (user) {
       errors.push({ message: 'This user already exists.' })
-      console.log('User already exists.')
-      res.render('register', {
+      return res.render('register', {
+        errors,
         name,
         email,
         password,
