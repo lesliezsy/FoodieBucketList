@@ -13,10 +13,8 @@ router.get('/new', (req, res) => {
 // Create: Add a new restaurant
 // 設定接住 new頁面POST來的表單資料，並且把資料送往資料庫（跟restaurants頁面？！）
 router.post('/', (req, res) => {
-    const userId = req.user._id
+    const { _id: userId } = req.user
     const restaurant = { ...req.body, userId  } // 從 req.body 拿出表單裡的資料
-
-    console.log("新增餐廳的內容： ", restaurant);
 
     return Restaurant.create(restaurant) // 存入資料庫
         .then(() => res.redirect('/')) // 新增完成後導回首頁
@@ -25,8 +23,8 @@ router.post('/', (req, res) => {
 
 // Read: View a restaurant's info
 router.get('/:id', (req, res) => {
-    const userId = req.user._id
-    const _id = req.params.id
+    const { _id: userId } = req.user
+    const { id: _id } = req.params
     return Restaurant.findOne({ _id, userId })
         .lean()
         .then((restaurant) => {
@@ -41,10 +39,7 @@ router.get('/:id', (req, res) => {
 // Update: Edit a restaurant's info
 router.get('/:id/edit', (req, res) => {
     const { _id: userId } = req.user
-    console.log(_id);
-    console.log(req.params.id);
-    // const userId = req.user._id
-    const _id = req.params.id
+    const { id: _id } = req.params
     return Restaurant.findOne({ _id, userId }) // 利用id查詢資料庫的資料
         .lean()
         .then((restaurant) => res.render('edit', {
@@ -54,8 +49,8 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    const userId = req.user._id
-    const _id = req.params.id
+    const { _id: userId } = req.user
+    const { id: _id } = req.params
     return Restaurant.findOne({ _id, userId })
         .then(restaurant => {
             restaurant = Object.assign(restaurant, req.body)
