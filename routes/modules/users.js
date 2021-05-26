@@ -21,11 +21,29 @@ router.get('/register', (req, res) => {
 
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
+  const errors = []
+  // 檢查表單資料
+  if (!name || !email || !password || !confirmPassword) {
+    errors.push({ message: 'Please complete all required fields.' })
+  }
+  if (password !== confirmPassword) {
+    errors.push({ message: 'Password and confirm password do not match.' })
+  }
+  if (errors.length) {
+    return res.render('register', {
+      errors,
+      name,
+      email,
+      password,
+      confirmPassword
+    })
+  }
   // 檢查使用者是否已經註冊
   User.findOne({ email }).then(user => {
     console.log("USER: ", user)
     // 如果已經註冊：退回原本畫面
     if (user) {
+      errors.push({ message: 'This user already exists.' })
       console.log('User already exists.')
       res.render('register', {
         name,
@@ -48,6 +66,7 @@ router.post('/register', (req, res) => {
 
 router.get('/logout', (req, res) => {
   req.logout()
+  req.flash('success_msg', 'You have been successfully logged out.')
   res.redirect('/users/login')
 })
 
