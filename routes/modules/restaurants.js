@@ -40,7 +40,10 @@ router.get('/:id', (req, res) => {
 
 // Update: Edit a restaurant's info
 router.get('/:id/edit', (req, res) => {
-    const userId = req.user._id
+    const { _id: userId } = req.user
+    console.log(_id);
+    console.log(req.params.id);
+    // const userId = req.user._id
     const _id = req.params.id
     return Restaurant.findOne({ _id, userId }) // 利用id查詢資料庫的資料
         .lean()
