@@ -23,8 +23,8 @@ router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
   const errors = []
   // 檢查表單資料
-  if (!name || !email || !password || !confirmPassword) {
-    errors.push({ message: 'Please complete all required fields.' })
+  if (!email || !password || !confirmPassword) {
+    errors.push({ message: 'Email and password are required.' })
   }
   if (password !== confirmPassword) {
     errors.push({ message: 'Password and confirm password do not match.' })
