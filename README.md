@@ -6,9 +6,10 @@
 FoodieBucketList is a website built with Node.js &amp; Express.
 
 ### As a foodie, you can
-* Search good restaurants
-* Read the introductions, reviews, and other details
+* Register your account
 * Manage your fav restaurants: post, update or remove
+* Record restaurant's introduction, review, and other details
+* Search restaurants
 * Rearrange restaurant cards by their name, category or rating
 
 ### As a developer, you can
@@ -29,25 +30,27 @@ $ git clone https://github.com/lesliezsy/FoodieBucketList.git
 ```
 
 ### Install Dependencies
-After cloning this project, run either ``yarn`` or ``npm install`` to build all the dependencies in the project.
+After cloning this project, run either ``npm install`` or ``yarn install`` to build all the dependencies in the project.
 
-Using npm:
-
-```
-$ npm install
-```
+then:
 ```
 $ npm run dev
+```
+or
+```
+$ yarn run dev
 ```
 
 ### Ecosystem
 * node.js: v12.19.0
 * express: v4.17.1
 * express-handlebars: v5.2.1
-* Bootstrap: v4.2.1 
-* font-awesome: v5.15.3
+* express-session: v1.17.2
 * body-parser: v1.19.0
 * method-override: v3.0.0
 * mongoose: v5.12.3
-
+* passport.js: v0.4.1
+* dotenv: v10.0.0
+* connect-flash: v0.1.1
+* bcryptjs: v2.4.3
 
