@@ -36,9 +36,15 @@ then:
 ```
 $ npm run dev
 ```
+```
+$ npm run seed
+```
 or
 ```
 $ yarn run dev
+```
+```
+$ yarn run seed
 ```
 
 ### Ecosystem
